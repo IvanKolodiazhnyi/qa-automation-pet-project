@@ -6,6 +6,7 @@ test("User should be able to login with valid credentials", async ({
 }) => {
   const productCard = page.locator('[data-test="inventory-item"]').first();
   const loginPage = new LoginPage(page);
+  console.log(page.locator('[data-test="inventory-item"]'))
 
   await page.goto("https://www.saucedemo.com/");
   await loginPage.performLogin("standard_user", "secret_sauce");
