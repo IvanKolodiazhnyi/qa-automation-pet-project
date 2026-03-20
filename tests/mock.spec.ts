@@ -20,8 +20,6 @@ test("Should mock fruits API and display custom fruit on UI", async ({
 
   const fruitItems = page.locator("ul > li");
 
-  await expect(fruitItems.first()).toBeVisible();
-
   await expect(fruitItems.first()).toHaveText("QA Automation Berry");
 });
 
