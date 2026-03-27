@@ -1,5 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
+import * as dotenv from 'dotenv'; // Імпортуємо бібліотеку
 
+// Кажемо бібліотеці прочитати файл .env і завантажити його в пам'ять
+dotenv.config();
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv

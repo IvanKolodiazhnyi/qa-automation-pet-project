@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { productSchema } from "../src/api-types";
 
 test("Should fetch product details by ID", async ({ request }) => {
-  const response = await request.get("https://dummyjson.com/products/1");
+  const response = await request.get(`${process.env.API_BASE_URL!}/products/1`);
   expect(response.status()).toBe(200);
 
   const rawBody = await response.json();
@@ -18,7 +18,7 @@ test("Should create a new product via POST request", async ({ request }) => {
     description: "Testing POST request with Playwright and Zod",
   };
 
-  const response = await request.post("https://dummyjson.com/products/add", {
+  const response = await request.post(`${process.env.API_BASE_URL!}/products/add`, {
     data: newProductPayload,
   });
 
