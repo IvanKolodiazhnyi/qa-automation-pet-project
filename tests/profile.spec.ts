@@ -5,4 +5,6 @@ test('Should access profile page without logging in again', async ({ page }) => 
 
   const logoutButton = page.locator('a:has-text("Log out")');
   await expect(logoutButton).toBeVisible();
+  
+  await expect(logoutButton).toHaveText("Hello");
 });
